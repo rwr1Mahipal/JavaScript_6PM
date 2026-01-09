@@ -1,3 +1,14 @@
+const tostFun = ({mesage}) => {
+  Toastify({
+    text: mesage, // Message to be displayed
+    duration: 3000, // Duration in milliseconds (3 seconds)
+    gravity: "top", // Position: 'top' or 'bottom'
+    position: "center", // Position: 'left', 'center', or 'right'
+    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)", // Custom styling
+    stopOnFocus: true, // Prevents dismissal on hover
+  }).showToast();
+};
+
 document.getElementById("form").addEventListener("submit", function (e) {
   e.preventDefault();
 

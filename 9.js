@@ -5,11 +5,13 @@ const users = [
 ];
 
 // const text = document.querySelector("h1");
-// const text = document.querySelectorAll(".div-text .text");
+const text = document.querySelectorAll(" .text");
 
-// users.map((user) => {
-//   text.innerHTML += user.name;
-// });
+users.map((user) => {
+  console.log(user);
+  
+  text.innerHTML += user.age;
+});
 
 // users.forEach((user, index) => {
 //   if (text[index]) {
@@ -23,12 +25,12 @@ const users = [
 //   alert("Hello");
 // });
 
-window.addEventListener("scroll", () => {
-  const nav = document.getElementById("nav");
-  if (window.scrollY > 100) {
-    nav.classList.add("scroll");
-    console.log(window.scrollY);
-  } else {
-    nav.classList.remove("scroll");
-  }
-});
+// window.addEventListener("scroll", () => {
+//   const nav = document.getElementById("nav");
+//   if (window.scrollY > 100) {
+//     nav.classList.add("scroll");
+//     console.log(window.scrollY);
+//   } else {
+//     nav.classList.remove("scroll");
+//   }
+// });

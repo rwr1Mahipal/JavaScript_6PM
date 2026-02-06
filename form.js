@@ -1,11 +1,15 @@
-const tostFun = ({mesage}) => {
+const showToast = (mesage, type = "success") => {
+  let bgColor =
+    type === "success"
+      ? "linear-gradient(to top, #155900, #70ff03)"
+      : "linear-gradient(to right, #b01d00bf, #c93d3d)";
   Toastify({
     text: mesage, // Message to be displayed
     duration: 3000, // Duration in milliseconds (3 seconds)
     gravity: "top", // Position: 'top' or 'bottom'
     position: "center", // Position: 'left', 'center', or 'right'
-    backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)", // Custom styling
-    stopOnFocus: true, // Prevents dismissal on hover
+    backgroundColor: bgColor,
+    stopOnFocus: true,
   }).showToast();
 };
 
@@ -49,24 +53,10 @@ document.getElementById("form").addEventListener("submit", function (e) {
     }
 
     error.innerHTML = "Form submitted";
-    Toastify({
-      text: "Form submitted", // Message to be displayed
-      duration: 3000, // Duration in milliseconds (3 seconds)
-      gravity: "top", // Position: 'top' or 'bottom'
-      position: "center", // Position: 'left', 'center', or 'right'
-      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)", // Custom styling
-      stopOnFocus: true, // Prevents dismissal on hover
-    }).showToast();
+    showToast("Form Submited", "success");
   } catch (error) {
     console.error("Form can't submitted", error);
-    Toastify({
-      text: error, // Message to be displayed
-      duration: 3000, // Duration in milliseconds (3 seconds)
-      gravity: "top", // Position: 'top' or 'bottom'
-      position: "center", // Position: 'left', 'center', or 'right'
-      backgroundColor: "linear-gradient(to right, #b00000ff, #a93a3aff)", // Custom styling
-      stopOnFocus: true, // Prevents dismissal on hover
-    }).showToast();
+    showToast(error, "error");
   } finally {
     console.log("From validation done");
   }

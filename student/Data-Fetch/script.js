@@ -9,24 +9,22 @@ async function fetchData() {
   }
 }
 
-function showData(products){
-console.log(products)
-const container = document.getElementById("container");
-container.innerHTML = ''
+function showData(products) {
+  console.log(products);
+  const container = document.getElementById("container");
+  container.innerHTML = "";
 
-const sliceData = products?.slice(0,5)
-sliceData?.map((ele) =>{
-  const box = document.createElement("div");
+  const sliceData = products?.slice(0, 5);
+  sliceData?.map((ele) => {
+    const box = document.createElement("div");
 
-   box.innerHTML += `
+    box.innerHTML += `
    <img src="${ele.thumbnail}" alt="${ele.title}">
     <h1>${ele.title} </h1>
-   `
- container.appendChild(box)
-})
-
+   `;
+    container.appendChild(box);
+  });
 }
 
-
-showData()
-fetchData()
+showData();
+fetchData();
